@@ -34,12 +34,18 @@ HomePage.getLayout = function getLayout(page) {
   return <RootLayout>{page}</RootLayout>;
 };
 
+function getRandomProducts(array, n) {
+  const shuffledArray = array.sort(() => 0.5 - Math.random());
+  return shuffledArray.slice(0, n);
+}
+
 export const getStaticProps = async () => {
   const res = await fetch(
     "https://pc-builder-server-ochre.vercel.app/products"
   );
   const data = await res.json();
-  return { props: { products: data }, revalidate: 10 };
+  const randomProducts = getRandomProducts(data, 6);
+  return { props: { products: randomProducts }, revalidate: 10 };
 };
 
 /* export const getStaticProps = async () => {
