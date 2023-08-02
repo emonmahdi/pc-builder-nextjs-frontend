@@ -1,10 +1,12 @@
 "use-client";
 import RootLayout from "@/components/Layouts/RootLayout";
+import { useAppSelector } from "@/redux/hook";
 import Link from "next/link";
 import React from "react";
 
 const PcBuilder = ({ product }) => {
-  console.log("this is products: ", product);
+  const { products } = useAppSelector((state) => state.cart);
+
   return (
     <div>
       <div className="m-4 md:w-[70%] mx-auto box-border  p-2">
@@ -25,6 +27,7 @@ const PcBuilder = ({ product }) => {
             <p className=" mt-1 font-semibold bg-[#4c4f4b] p-3 text-white">
               Your Build PC
             </p>
+            <p>{product?.title}</p>
           </div>
         </div>
         <div>
