@@ -2,7 +2,8 @@
 import Link from "next/link";
 
 const ProductCard = ({ product }) => {
-  const { id, title, img, price, status, category, rating } = product;
+  const { id, title, description, img, price, status, category, rating } =
+    product;
 
   const handleAddToPC = (product) => {
     console.log("Done the product add");
@@ -10,9 +11,12 @@ const ProductCard = ({ product }) => {
   };
 
   return (
-    <div key={id} className="card w-96 bg-base-100 shadow-xl mb-4">
+    <div
+      key={id}
+      className="card w-[100%] md:w-2/2 lg:w-3/3 bg-base-100 shadow-xl mb-4"
+    >
       <figure>
-        <img src={img} width="auto" height="200px" alt="Shoes" />
+        <img src={img} width="50%" height="auto" alt="Shoes" />
       </figure>
       <div className="card-body">
         <p className="text-orange-400">{status}</p>
@@ -22,25 +26,25 @@ const ProductCard = ({ product }) => {
             <div className="badge badge-secondary">{price}৳</div>
           </h2>
         </Link>
-        <p>If a dog chews shoes whose shoes does he choose?</p>
-        <div className="">
-          <div className="">
+        <p> {description.slice(0, 120)}.......</p>
+        <div>
+          <div>
             <p>
               {" "}
               <span className="font-bold capitalize">Category:</span>{" "}
-              <span className="bg-black px-2 py-1 text-white rounded-full capitalize">
+              <span className="font-bold px-2 text-orange-400 rounded-full capitalize">
                 {category}
               </span>
             </p>
           </div>
           <br />
-          <div className="">
+          <div>
             <p>
               {" "}
               <span className="font-bold">Rating:</span> {rating}
             </p>
           </div>
-          <div className="text-center my-4">
+          <div className="text-center my-2">
             <button
               onClick={() => handleAddToPC(product)}
               className="btn btn-primary"

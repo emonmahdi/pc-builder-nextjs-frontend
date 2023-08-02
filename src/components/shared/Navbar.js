@@ -1,9 +1,24 @@
 import React from "react";
 import Link from "next/link";
 import { useSession, signOut } from "next-auth/react";
+import { useEffect } from "react";
+import { useAppDispatch, useAppSelector } from "@/redux/hook";
+import { setUser } from "@/redux/features/user/userSlice";
+
 const Navbar = () => {
+  const dispatch = useAppDispatch();
+  const { user } = useAppSelector((state) => state.user);
   const { data: session } = useSession();
-  console.log("from", session);
+  // console.log(session?.user?.email)
+  /* useEffect(() => {
+    dispatch(setUser(session?.user?.email));
+  }, [session?.user, dispatch]);
+
+  const handelLogOut = () => {
+    signOut();
+    dispatch(setUser(null));
+  }; */
+
   return (
     <div className="navbar bg-info z-20 relative">
       <div className="navbar-start">
@@ -120,7 +135,7 @@ const Navbar = () => {
           PC Builder
         </Link>
         {session?.user ? (
-          <button onClick={() => signOut()} className="btn btn-primary">
+          <button onClick={() => signOut()} className="btn btn-warning">
             Log Out
           </button>
         ) : (

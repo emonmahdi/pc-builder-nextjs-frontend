@@ -10,7 +10,7 @@ const ProcessorPage = ({ allProducts }) => {
       <div className="">
         <h2 className="text-center text-3xl font-bold my-4">All Processor</h2>
       </div>
-      <div className="grid grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {processor &&
           processor?.map((product) => (
             <ProductCard product={product} key={product.id}></ProductCard>
@@ -27,7 +27,9 @@ ProcessorPage.getLayout = function getLayout(page) {
 };
 
 export const getStaticProps = async () => {
-  const res = await fetch("https://pc-builder-server-ochre.vercel.app/products");
+  const res = await fetch(
+    "https://pc-builder-server-ochre.vercel.app/products"
+  );
   const data = await res.json();
   console.log("Monitor: ", data);
 

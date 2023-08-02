@@ -7,8 +7,7 @@ const PcBuilder = ({ product }) => {
   console.log("this is products: ", product);
   return (
     <div>
-      <h2>This is PC Builder.</h2>
-      <div className="m-4  md:w-[70%] mx-auto box-border  p-2">
+      <div className="m-4 md:w-[70%] mx-auto box-border  p-2">
         <div className="grid grid-cols-5">
           <div className="col-start-1 col-span-5 w-full h-auto bg-base-200">
             <div className="md:flex md:justify-between">

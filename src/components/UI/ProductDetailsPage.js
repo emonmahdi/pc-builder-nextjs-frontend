@@ -19,17 +19,19 @@ const SingleProductDetailPage = ({ product }) => {
     average_rating,
   } = product;
   return (
-    <div className="h-[auto] w-100">
+    <div className="h-auto w-full">
       <div className="hero min-h-screen">
         <div className="hero-content flex-col lg:flex-row">
-          <img src={img} className="max-w-sm rounded-lg shadow-2xl w-[50%]" />
-          <div className="w-[50%] pl-20">
-            <h1 className="text-2xl font-bold">{title}</h1>
+          <img src={img} className="max-w-md rounded-lg" />
+          <div className="">
+            <h1 className="text-xl xs:text-[14px] lg:text-2xl font-bold">
+              {title}
+            </h1>
             <div className="flex mt-4">
               <div>
-                <p className="font-bold">
+                <p className="font-bold text-xl">
                   <span className="text-gray-500 font-bold">Price:</span>{" "}
-                  {price} ৳
+                  <span className="text-xl font-bold">{price} ৳</span>
                 </p>
               </div>
               <div className="ml-6">
@@ -58,7 +60,7 @@ const SingleProductDetailPage = ({ product }) => {
               </h4>
             </div> */}
             <div className="mt-4">
-              <h3>Key features: </h3>
+              <h3 className="text-gray-500 font-bold">Key features: </h3>
               <ul className="py-2 px-4">
                 <li>
                   <span className="font-bold"> Model:</span>{" "}

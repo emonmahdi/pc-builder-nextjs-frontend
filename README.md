@@ -1,38 +1,29 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+### PC BUILDER App
 
-## Getting Started
+- Frontend Live Link: https://serene-biscochitos-74650d.netlify.app/
 
-First, run the development server:
+- Frontend Github Repository Link: https://github.com/emonmahdi/pc-builder-nextjs-frontend.git
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+- Backend Code Live Link: https://pc-builder-server-ochre.vercel.app
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Features the app:
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+- Show random product.
+- View single product details page.
+- Implement Redux-toolkit state management.
+- SSG implement.
+- SSR implement.
+- Register and Login user with Google and Github.
+- Make PC Builder your custom PC.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+### Using languages and tools
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- Next Js, React.
+- React-Redux, Redux-toolkit.
+- Next Auth.
+- React Toastify.
+- React Icons.
+- React Hook forms.
+- Daisy UI.
+- Tailwind Css.
+- Github and Google Authentication.

@@ -17,7 +17,7 @@ export default function HomePage({ products }) {
   }, [products, dispatch]);
   return (
     <>
-      <div className="">
+      <div>
         <Banner />
       </div>
       <div>

@@ -11,7 +11,7 @@ const MotherboardPage = ({ allProducts }) => {
       <div className="">
         <h2 className="text-center text-3xl font-bold my-4">All Motherboard</h2>
       </div>
-      <div className="grid grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {motherboard &&
           motherboard?.map((product) => (
             <ProductCard product={product} key={product.id}></ProductCard>
