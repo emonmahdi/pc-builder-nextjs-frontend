@@ -1,8 +1,10 @@
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
+import { useSession, signOut } from "next-auth/react";
 
 const Banner = () => {
+  const { data: session } = useSession();
   return (
     <div>
       <div className="hero min-h-screen bg-yellow-400">
@@ -13,7 +15,8 @@ const Banner = () => {
           />
           <div className="w-[50%]">
             <h1 className="text-5xl font-bold -z-20 relative">
-              Welcome to Our PC Builder Shop
+              Welcome to Our PC Builder Shop -{" "}
+              <span>{session?.user?.name}</span>
             </h1>
             <p className="py-6">
               Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda

@@ -1,7 +1,9 @@
 import React from "react";
 import Link from "next/link";
-
+import { useSession, signOut } from "next-auth/react";
 const Navbar = () => {
+  const { data: session } = useSession();
+  console.log("from", session);
   return (
     <div className="navbar bg-info z-20 relative">
       <div className="navbar-start">
@@ -114,9 +116,18 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-end">
-        <Link href="/pc-builder" className="btn mr-8">
+        <Link href="/pc-build" className="btn btn-secondary mr-8">
           PC Builder
         </Link>
+        {session?.user ? (
+          <button onClick={() => signOut()} className="btn btn-primary">
+            Log Out
+          </button>
+        ) : (
+          <Link href="/login" className="mr-8">
+            <button className="btn btn-success">Login</button>
+          </Link>
+        )}
       </div>
     </div>
   );
