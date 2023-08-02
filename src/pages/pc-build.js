@@ -2,10 +2,41 @@
 import RootLayout from "@/components/Layouts/RootLayout";
 import { useAppSelector } from "@/redux/hook";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect } from "react";
+import { useState } from "react";
 
 const PcBuilder = ({ product }) => {
   const { products } = useAppSelector((state) => state.cart);
+
+  const [filteredProducts, setFilteredProducts] = useState();
+
+  const { addToBuild } = useAppSelector((state) => state.addToBuild);
+
+  const handelAddToBuilder = () => {};
+  useEffect(() => {
+    setFilteredProducts(
+      products.filter(
+        (product) =>
+          (product.category === "monitor") |
+          "motherboard" |
+          "power-supply-uni" |
+          "ram" |
+          "processor" |
+          "storage-device"
+      )
+    );
+  }, [products]);
+
+  const matchedCategory = product.map((pro) => pro.category);
+
+  console.log(
+    "this is server products",
+    matchedCategory.filter((m) => console.log(m))
+  );
+
+  const filterPro = matchedCategory.filter((m) => {
+    return m;
+  });
 
   return (
     <div>
@@ -27,59 +58,188 @@ const PcBuilder = ({ product }) => {
             <p className=" mt-1 font-semibold bg-[#4c4f4b] p-3 text-white">
               Your Build PC
             </p>
-            <p>{product?.title}</p>
+            {/* <p>
+              {products?.map((pro) => (
+                <>
+                  <p>{pro?.title}</p>
+                </>
+              ))}
+            </p> */}
           </div>
         </div>
         <div>
           {/* single category */}
           <div className="flex justify-between items-center my-4 bg-gray-700 p-4 text-light rounded-2xl">
-            <li className="list-none capitalize text-xl text-white">
-              Processor
-            </li>
-            <Link href="/categories/processor">
-              <button className="btn btn-primary">Choose</button>
-            </Link>
+            <div>
+              <li className="list-none capitalize text-xl text-white">
+                Processor
+              </li>
+            </div>
+            <div>
+              {/* {products?.map((pro) =>
+                pro?.category === matchedCategory?.map((ma) => ma?.category) ? (
+                  <>{pro.title}</>
+                ) : null
+              )} */}
+              {products.map((pro) =>
+                pro.category === "processor" ? (
+                  <>
+                    <div className="flex items-center">
+                      <img src={pro?.img} className="w-[50px]" alt="" />
+                      <p className="text-white ml-2">{pro.title}</p>
+                    </div>
+                  </>
+                ) : (
+                  ""
+                )
+              )}
+              {/*   {filteredProducts.map((pro) => (
+                <>
+                  <li>{pro.title}</li>
+                </>
+              ))} */}
+            </div>
+            <div>
+              <Link href="/categories/processor">
+                <button className="btn btn-primary">Choose</button>
+              </Link>
+            </div>
           </div>
           {/* single category */}
           <div className="flex justify-between items-center my-4 bg-gray-700 p-4 text-light rounded-2xl">
-            <li className="list-none capitalize text-xl text-white">
-              Motherboard
-            </li>
-            <Link href="/categories/motherboard">
-              <button className="btn btn-primary">Choose</button>
-            </Link>
+            <div>
+              <li className="list-none capitalize text-xl text-white">
+                Motherboard
+              </li>
+            </div>
+            <div>
+              {products.map((pro) =>
+                pro.category === "motherboard" ? (
+                  <>
+                    <div className="flex items-center">
+                      <img src={pro?.img} className="w-[50px]" alt="" />
+                      <p className="text-white ml-2">{pro.title}</p>
+                    </div>
+                  </>
+                ) : (
+                  ""
+                )
+              )}
+            </div>
+            <div>
+              <Link href="/categories/motherboard">
+                <button className="btn btn-primary">Choose</button>
+              </Link>
+            </div>
           </div>
           {/* single category */}
           <div className="flex justify-between items-center my-4 bg-gray-700 p-4 text-light rounded-2xl">
-            <li className="list-none capitalize text-xl text-white">Ram</li>
-            <Link href="/categories/ram">
-              <button className="btn btn-primary">Choose</button>
-            </Link>
+            <div>
+              {" "}
+              <li className="list-none capitalize text-xl text-white">Ram</li>
+            </div>
+            <div>
+              {products.map((pro) =>
+                pro.category === "ram" ? (
+                  <>
+                    <div className="flex items-center">
+                      <img src={pro?.img} className="w-[50px]" alt="" />
+                      <p className="text-white ml-2">{pro.title}</p>
+                    </div>
+                  </>
+                ) : (
+                  ""
+                )
+              )}
+            </div>
+            <div>
+              <Link href="/categories/ram">
+                <button className="btn btn-primary">Choose</button>
+              </Link>
+            </div>
           </div>
           {/* single category */}
           <div className="flex justify-between items-center my-4 bg-gray-700 p-4 text-light rounded-2xl">
-            <li className="list-none capitalize text-xl text-white">
-              Power Supply Unit
-            </li>
-            <Link href="/categories/power-supply-unit">
-              <button className="btn btn-primary">Choose</button>
-            </Link>
+            <div>
+              <li className="list-none capitalize text-xl text-white">
+                Power Supply Unit
+              </li>
+            </div>
+            <div>
+              {products.map((pro) =>
+                pro.category === "power-supply-unit" ? (
+                  <>
+                    <div className="flex items-center">
+                      <img src={pro?.img} className="w-[50px]" alt="" />
+                      <p className="text-white ml-2">{pro.title}</p>
+                    </div>
+                  </>
+                ) : (
+                  ""
+                )
+              )}
+            </div>
+            <div>
+              <Link href="/categories/power-supply-unit">
+                <button className="btn btn-primary">Choose</button>
+              </Link>
+            </div>
           </div>
           {/* single category */}
           <div className="flex justify-between items-center my-4 bg-gray-700 p-4 text-light rounded-2xl">
-            <li className="list-none capitalize text-xl text-white">
-              Storage Device
-            </li>
-            <Link href="/categories/storage-device">
-              <button className="btn btn-primary">Choose</button>
-            </Link>
+            <div>
+              <li className="list-none capitalize text-xl text-white">
+                Storage Device
+              </li>
+            </div>
+            <div>
+              {products.map((pro) =>
+                pro.category === "storage-device" ? (
+                  <>
+                    <div className="flex items-center">
+                      <img src={pro?.img} className="w-[50px]" alt="" />
+                      <p className="text-white ml-2">{pro.title}</p>
+                    </div>
+                  </>
+                ) : (
+                  ""
+                )
+              )}
+            </div>
+            <div>
+              <Link href="/categories/storage-device">
+                <button className="btn btn-primary">Choose</button>
+              </Link>
+            </div>
           </div>
           {/* single category */}
           <div className="flex justify-between items-center my-4 bg-gray-700 p-4 text-light rounded-2xl">
-            <li className="list-none capitalize text-xl text-white">Monitor</li>
-            <Link href="/categories/monitor">
-              <button className="btn btn-primary">Choose</button>
-            </Link>
+            <div>
+              {" "}
+              <li className="list-none capitalize text-xl text-white">
+                Monitor
+              </li>
+            </div>
+            <div>
+              {products.map((pro) =>
+                pro.category === "monitor" ? (
+                  <>
+                    <div className="flex items-center">
+                      <img src={pro?.img} className="w-[50px]" alt="" />
+                      <p className="text-white ml-2">{pro.title}</p>
+                    </div>
+                  </>
+                ) : (
+                  ""
+                )
+              )}
+            </div>
+            <div>
+              {" "}
+              <Link href="/categories/monitor">
+                <button className="btn btn-primary">Choose</button>
+              </Link>
+            </div>
           </div>
         </div>
       </div>

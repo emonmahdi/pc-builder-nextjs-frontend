@@ -9,7 +9,13 @@ export const pcSlice = createSlice({
   initialState,
   reducers: {
     addToPcBuilder: (state, action) => {
-      state.products.push(action.payload);
+      const existing = state.products.find(
+        (product) => product._id === action.payload._id
+      );
+
+      if (!existing) {
+        state.products.push(action.payload);
+      }
     },
   },
 });

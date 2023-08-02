@@ -1,13 +1,18 @@
 /* eslint-disable @next/next/no-img-element */
+import { addToPcBuilder } from "@/redux/features/cart/cartSlice";
+import { useAppDispatch } from "@/redux/hook";
 import Link from "next/link";
 
 const ProductCard = ({ product }) => {
   const { id, title, description, img, price, status, category, rating } =
     product;
 
+  const dispatch = useAppDispatch();
+
   const handleAddToPC = (product) => {
     console.log("Done the product add");
     console.log(product);
+    dispatch(addToPcBuilder(product));
   };
 
   return (
