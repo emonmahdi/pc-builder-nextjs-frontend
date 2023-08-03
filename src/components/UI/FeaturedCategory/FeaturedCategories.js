@@ -90,7 +90,7 @@ const FeaturedCategories = () => {
         </div>
         <div className="p-4 bg-slate-600 rounded-lg text-center text-white">
           <Link
-            href="/categories/others"
+            href="/categories/other"
             className="text-white decoration-clone"
           >
             <img

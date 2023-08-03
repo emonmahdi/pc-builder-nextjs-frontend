@@ -29,7 +29,8 @@ const ProductCard = ({ product }) => {
         <p className="text-purple-400 font-bold">{status}</p>
         <Link href={`/detail/${product?._id}`}>
           <h2 className="card-title">
-            {title}
+            <span className="hover:text-orange-600">{title}</span>
+
             <div className="badge badge-secondary">{price}৳</div>
           </h2>
         </Link>

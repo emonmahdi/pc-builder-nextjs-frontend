@@ -119,7 +119,7 @@ const Navbar = () => {
                   <Link href={"/categories/monitor"}>Monitor</Link>
                 </li>
                 <li>
-                  <Link href={"/categories/others"}>Others</Link>
+                  <Link href={"/categories/other"}>Others</Link>
                   <a></a>
                 </li>
               </ul>
