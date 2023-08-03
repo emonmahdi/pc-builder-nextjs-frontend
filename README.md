@@ -1,6 +1,6 @@
 ### PC BUILDER App
 
-- Frontend Live Link: https://serene-biscochitos-74650d.netlify.app/
+- Frontend Live Link: https://pc-builder-next-app.vercel.app/
 
 - Frontend Github Repository Link: https://github.com/emonmahdi/pc-builder-nextjs-frontend.git
 
