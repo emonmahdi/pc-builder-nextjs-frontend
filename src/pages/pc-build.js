@@ -93,16 +93,30 @@ const PcBuilder = ({ product }) => {
                   ""
                 )
               )}
-              {/*   {filteredProducts.map((pro) => (
-                <>
-                  <li>{pro.title}</li>
-                </>
-              ))} */}
             </div>
             <div>
               <Link href="/categories/processor">
-                <button className="btn btn-primary">Choose</button>
+                <button
+                  className={`btn btn-primary ${
+                    products.find((pro) => pro.category === "processor")
+                      ? "btn-disabled"
+                      : ""
+                  }`}
+                >
+                  Choose
+                </button>
               </Link>
+              {/* {products.map((pro) =>
+                pro.category === "processor" ? (
+                  <>
+                    <button className="btn" disabled="disabled">
+                      Choose disabled
+                    </button>
+                  </>
+                ) : (
+                  <></>
+                )
+              )} */}
             </div>
           </div>
           {/* single category */}
@@ -128,7 +142,15 @@ const PcBuilder = ({ product }) => {
             </div>
             <div>
               <Link href="/categories/motherboard">
-                <button className="btn btn-primary">Choose</button>
+                <button
+                  className={`btn btn-primary ${
+                    products.find((pro) => pro.category === "motherboard")
+                      ? "btn-disabled"
+                      : ""
+                  }`}
+                >
+                  Choose
+                </button>
               </Link>
             </div>
           </div>
@@ -154,7 +176,15 @@ const PcBuilder = ({ product }) => {
             </div>
             <div>
               <Link href="/categories/ram">
-                <button className="btn btn-primary">Choose</button>
+                <button
+                  className={`btn btn-primary ${
+                    products.find((pro) => pro.category === "ram")
+                      ? "btn-disabled"
+                      : ""
+                  }`}
+                >
+                  Choose
+                </button>
               </Link>
             </div>
           </div>
@@ -181,7 +211,15 @@ const PcBuilder = ({ product }) => {
             </div>
             <div>
               <Link href="/categories/power-supply-unit">
-                <button className="btn btn-primary">Choose</button>
+                <button
+                  className={`btn btn-primary ${
+                    products.find((pro) => pro.category === "power-supply-unit")
+                      ? "btn-disabled"
+                      : ""
+                  }`}
+                >
+                  Choose
+                </button>
               </Link>
             </div>
           </div>
@@ -208,7 +246,15 @@ const PcBuilder = ({ product }) => {
             </div>
             <div>
               <Link href="/categories/storage-device">
-                <button className="btn btn-primary">Choose</button>
+                <button
+                  className={`btn btn-primary ${
+                    products.find((pro) => pro.category === "storage-device")
+                      ? "btn-disabled"
+                      : ""
+                  }`}
+                >
+                  Choose
+                </button>
               </Link>
             </div>
           </div>
@@ -235,9 +281,16 @@ const PcBuilder = ({ product }) => {
               )}
             </div>
             <div>
-              {" "}
               <Link href="/categories/monitor">
-                <button className="btn btn-primary">Choose</button>
+                <button
+                  className={`btn btn-primary ${
+                    products.find((pro) => pro.category === "monitor")
+                      ? "btn-disabled"
+                      : ""
+                  }`}
+                >
+                  Choose
+                </button>
               </Link>
             </div>
           </div>
