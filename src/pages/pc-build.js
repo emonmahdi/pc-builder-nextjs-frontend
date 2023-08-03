@@ -1,46 +1,25 @@
+/* eslint-disable @next/next/no-img-element */
 "use-client";
 import RootLayout from "@/components/Layouts/RootLayout";
 import { useAppSelector } from "@/redux/hook";
 import Link from "next/link";
 import React, { useEffect } from "react";
 import { useState } from "react";
+import { Toaster, toast } from "react-hot-toast";
 
 const PcBuilder = ({ product }) => {
   const { products } = useAppSelector((state) => state.cart);
 
-  const [filteredProducts, setFilteredProducts] = useState();
+  const x = products.map((product) => "");
 
-  const { addToBuild } = useAppSelector((state) => state.addToBuild);
-
-  const handelAddToBuilder = () => {};
-  useEffect(() => {
-    setFilteredProducts(
-      products.filter(
-        (product) =>
-          (product.category === "monitor") |
-          "motherboard" |
-          "power-supply-uni" |
-          "ram" |
-          "processor" |
-          "storage-device"
-      )
-    );
-  }, [products]);
-
-  const matchedCategory = product.map((pro) => pro.category);
-
-  console.log(
-    "this is server products",
-    matchedCategory.filter((m) => console.log(m))
-  );
-
-  const filterPro = matchedCategory.filter((m) => {
-    return m;
-  });
+  const notify = () => {
+    toast.success("Successfully Build! Request ");
+  };
 
   return (
     <div>
       <div className="m-4 md:w-[70%] mx-auto box-border  p-2">
+        <Toaster />
         <div className="grid grid-cols-5">
           <div className="col-start-1 col-span-5 w-full h-auto bg-base-200">
             <div className="md:flex md:justify-between">
@@ -49,7 +28,10 @@ const PcBuilder = ({ product }) => {
               </h3>
               <div>
                 <button
-                  className={`btn btn-outline border-dashed border-[#42d91c] hover:border-[#42d91c] my-3 mx-1 bg-transparent hover:bg-[#42d91c] hover:text-white`}
+                  onClick={notify}
+                  className={`btn btn-outline border-dotted border-[#42d91c] hover:border-[#42d91c] my-3 mx-1 bg-transparent bg-[#42d91c] hover:text-white ${
+                    x.length === 6 ? "" : "btn-disabled"
+                  }`}
                 >
                   Completed Build
                 </button>
@@ -58,13 +40,6 @@ const PcBuilder = ({ product }) => {
             <p className=" mt-1 font-semibold bg-[#4c4f4b] p-3 text-white">
               Your Build PC
             </p>
-            {/* <p>
-              {products?.map((pro) => (
-                <>
-                  <p>{pro?.title}</p>
-                </>
-              ))}
-            </p> */}
           </div>
         </div>
         <div>
@@ -76,17 +51,17 @@ const PcBuilder = ({ product }) => {
               </li>
             </div>
             <div>
-              {/* {products?.map((pro) =>
-                pro?.category === matchedCategory?.map((ma) => ma?.category) ? (
-                  <>{pro.title}</>
-                ) : null
-              )} */}
               {products.map((pro) =>
                 pro.category === "processor" ? (
                   <>
                     <div className="flex items-center">
-                      <img src={pro?.img} className="w-[50px]" alt="" />
-                      <p className="text-white ml-2">{pro.title}</p>
+                      <div>
+                        <img src={pro?.img} className="w-[50px]" alt="" />
+                      </div>
+                      <div className="text-white ml-4">
+                        <p>{pro.title}</p>
+                        <p className="text-xl font-semibold ">{pro.price}৳</p>
+                      </div>
                     </div>
                   </>
                 ) : (
@@ -106,17 +81,6 @@ const PcBuilder = ({ product }) => {
                   Choose
                 </button>
               </Link>
-              {/* {products.map((pro) =>
-                pro.category === "processor" ? (
-                  <>
-                    <button className="btn" disabled="disabled">
-                      Choose disabled
-                    </button>
-                  </>
-                ) : (
-                  <></>
-                )
-              )} */}
             </div>
           </div>
           {/* single category */}
@@ -131,8 +95,13 @@ const PcBuilder = ({ product }) => {
                 pro.category === "motherboard" ? (
                   <>
                     <div className="flex items-center">
-                      <img src={pro?.img} className="w-[50px]" alt="" />
-                      <p className="text-white ml-2">{pro.title}</p>
+                      <div>
+                        <img src={pro?.img} className="w-[50px]" alt="" />
+                      </div>
+                      <div className="text-white ml-4">
+                        <p>{pro.title}</p>
+                        <p className="text-xl font-semibold ">{pro.price}৳</p>
+                      </div>
                     </div>
                   </>
                 ) : (
@@ -165,8 +134,13 @@ const PcBuilder = ({ product }) => {
                 pro.category === "ram" ? (
                   <>
                     <div className="flex items-center">
-                      <img src={pro?.img} className="w-[50px]" alt="" />
-                      <p className="text-white ml-2">{pro.title}</p>
+                      <div>
+                        <img src={pro?.img} className="w-[50px]" alt="" />
+                      </div>
+                      <div className="text-white ml-4">
+                        <p>{pro.title}</p>
+                        <p className="text-xl font-semibold ">{pro.price}৳</p>
+                      </div>
                     </div>
                   </>
                 ) : (
@@ -200,8 +174,13 @@ const PcBuilder = ({ product }) => {
                 pro.category === "power-supply-unit" ? (
                   <>
                     <div className="flex items-center">
-                      <img src={pro?.img} className="w-[50px]" alt="" />
-                      <p className="text-white ml-2">{pro.title}</p>
+                      <div>
+                        <img src={pro?.img} className="w-[50px]" alt="" />
+                      </div>
+                      <div className="text-white ml-4">
+                        <p>{pro.title}</p>
+                        <p className="text-xl font-semibold ">{pro.price}৳</p>
+                      </div>
                     </div>
                   </>
                 ) : (
@@ -235,8 +214,13 @@ const PcBuilder = ({ product }) => {
                 pro.category === "storage-device" ? (
                   <>
                     <div className="flex items-center">
-                      <img src={pro?.img} className="w-[50px]" alt="" />
-                      <p className="text-white ml-2">{pro.title}</p>
+                      <div>
+                        <img src={pro?.img} className="w-[50px]" alt="" />
+                      </div>
+                      <div className="text-white ml-4">
+                        <p>{pro.title}</p>
+                        <p className="text-xl font-semibold ">{pro.price}৳</p>
+                      </div>
                     </div>
                   </>
                 ) : (
@@ -271,8 +255,13 @@ const PcBuilder = ({ product }) => {
                 pro.category === "monitor" ? (
                   <>
                     <div className="flex items-center">
-                      <img src={pro?.img} className="w-[50px]" alt="" />
-                      <p className="text-white ml-2">{pro.title}</p>
+                      <div>
+                        <img src={pro?.img} className="w-[50px]" alt="" />
+                      </div>
+                      <div className="text-white ml-4">
+                        <p>{pro.title}</p>
+                        <p className="text-xl font-semibold ">{pro.price}৳</p>
+                      </div>
                     </div>
                   </>
                 ) : (

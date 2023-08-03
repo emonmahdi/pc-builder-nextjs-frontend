@@ -1,12 +1,14 @@
 /* eslint-disable @next/next/no-img-element */
 import { addToPcBuilder } from "@/redux/features/cart/cartSlice";
 import { useAppDispatch } from "@/redux/hook";
+import { useSession } from "next-auth/react";
 import Link from "next/link";
 
 const ProductCard = ({ product }) => {
   const { id, title, description, img, price, status, category, rating } =
     product;
 
+  const { data: session } = useSession();
   const dispatch = useAppDispatch();
 
   const handleAddToPC = (product) => {
@@ -24,7 +26,7 @@ const ProductCard = ({ product }) => {
         <img src={img} width="50%" height="auto" alt="Shoes" />
       </figure>
       <div className="card-body">
-        <p className="text-orange-400">{status}</p>
+        <p className="text-purple-400 font-bold">{status}</p>
         <Link href={`/detail/${product?._id}`}>
           <h2 className="card-title">
             {title}
@@ -42,7 +44,6 @@ const ProductCard = ({ product }) => {
               </span>
             </p>
           </div>
-          <br />
           <div>
             <p>
               {" "}
@@ -50,12 +51,18 @@ const ProductCard = ({ product }) => {
             </p>
           </div>
           <div className="text-center my-2">
-            <button
-              onClick={() => handleAddToPC(product)}
-              className="btn btn-primary"
-            >
-              Add To Builder
-            </button>
+            {session?.user ? (
+              <Link href="/pc-build">
+                <button
+                  onClick={() => handleAddToPC(product)}
+                  className="btn btn-primary"
+                >
+                  Add To Builder
+                </button>
+              </Link>
+            ) : (
+              ""
+            )}
           </div>
         </div>
       </div>

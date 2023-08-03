@@ -14,7 +14,7 @@ export const pcSlice = createSlice({
       );
 
       if (!existing) {
-        state.products.push(action.payload);
+        state.products.push({...action.payload});
       }
     },
   },
