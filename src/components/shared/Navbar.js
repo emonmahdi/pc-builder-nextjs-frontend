@@ -4,6 +4,7 @@ import { useSession, signOut } from "next-auth/react";
 import { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "@/redux/hook";
 import { setUser } from "@/redux/features/user/userSlice";
+import MyButton from "../UI/MyButton";
 
 const Navbar = () => {
   const dispatch = useAppDispatch();
@@ -20,7 +21,7 @@ const Navbar = () => {
   }; */
 
   return (
-    <div className="navbar bg-info z-20 relative">
+    <div className="navbar sticky top-0 bg-[#444444] text-white z-20 lg:px-16">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -41,7 +42,7 @@ const Navbar = () => {
           </label>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-60 "
+            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow rounded-box w-60 bg-[#444444]"
           >
             <li>
               <a>Home</a>
@@ -79,9 +80,9 @@ const Navbar = () => {
         </div>
         <Link
           href="/"
-          className="text-green-950 font-bold no-underline normal-case text-2xl"
+          className="text-white font-bold no-underline normal-case text-2xl"
         >
-          PC Builder App
+          Mahdi PC Builder
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
@@ -94,7 +95,7 @@ const Navbar = () => {
           <li tabIndex={0}>
             <details>
               <summary>Categories </summary>
-              <ul className="p-2">
+              <ul className="p-2 bg-[#444444]">
                 <li>
                   <Link href={"/categories/processor"}>CPU / Processor</Link>
                 </li>
@@ -131,16 +132,17 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-end">
-        <Link href="/pc-build" className="btn btn-secondary mr-8">
-          PC Builder
+        <Link href="/pc-build" className="btn btn-info mr-8">
+          MAKE PC
         </Link>
         {session?.user ? (
-          <button onClick={() => signOut()} className="btn btn-warning">
+          <button className="btn bg-[#E74645]" onClick={() => signOut()}>
             Log Out
           </button>
         ) : (
+          // <MyButton >Login</MyButton>
           <Link href="/login" className="mr-8">
-            <button className="btn btn-success">Login</button>
+            <MyButton>Login</MyButton>
           </Link>
         )}
       </div>

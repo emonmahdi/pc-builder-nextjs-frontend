@@ -21,7 +21,7 @@ export async function getStaticPaths() {
     `https://pc-builder-server-ochre.vercel.app/products`
   );
   const products = await res.json();
-  console.log("my products:", products);
+  // console.log("my products:", products);
 
   const paths = products?.map((product) => ({
     params: { productId: product?._id },

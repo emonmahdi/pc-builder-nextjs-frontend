@@ -7,7 +7,7 @@ import { useAppDispatch } from "@/redux/hook";
 import { useEffect } from "react";
 
 export default function HomePage({ products }) {
-  console.log(products);
+  // console.log(products);
   const dispatch = useAppDispatch();
   // dispatch(getProductsSuccess(product.data))
   useEffect(() => {

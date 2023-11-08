@@ -16,10 +16,10 @@ const PcBuilderPage = ({ product }) => {
   const [filteredProducts, setFilteredProducts] = useState();
 
   const { products } = useAppSelector((state) => state.products);
-  console.log(
-    "all products: ",
-    product.map((p) => p?.category === "monitor" && p.title)
-  );
+  // console.log(
+  //   "all products: ",
+  //   product.map((p) => p?.category === "monitor" && p.title)
+  // );
   const { addToBuild } = useAppSelector((state) => state.addToBuild);
 
   const handelAddToBuilder = (category) => {

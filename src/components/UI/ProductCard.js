@@ -12,15 +12,13 @@ const ProductCard = ({ product }) => {
   const dispatch = useAppDispatch();
 
   const handleAddToPC = (product) => {
-    console.log("Done the product add");
-    console.log(product);
     dispatch(addToPcBuilder(product));
   };
 
   return (
     <div
       key={id}
-      className="card w-[100%] md:w-2/2 lg:w-3/3 bg-base-100 shadow-xl mb-4"
+      className="card w-[100%] md:w-2/2 lg:w-3/3 bg-base-100 shadow-xl mb-4 "
     >
       <figure>
         <img src={img} width="50%" height="auto" alt="Shoes" />

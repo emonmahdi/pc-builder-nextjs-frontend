@@ -4,9 +4,11 @@ import Link from "next/link";
 
 const FeaturedCategories = () => {
   return (
-    <div>
-      <h1 className="text-center font-bold text-3xl">Featured Categories</h1>
-      <div class="grid grid-cols-7 gap-4 mt-16 mb-8">
+    <div className="lg:px-16">
+      <h1 className="text-center font-bold text-3xl mb-5">
+        Featured Categories
+      </h1>
+      <div class="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-4  sm:px-4">
         <div className="p-4 bg-slate-600 rounded-lg text-center text-white">
           <Link
             href="/categories/processor"
@@ -18,7 +20,7 @@ const FeaturedCategories = () => {
               alt=""
               className="mx-auto"
             />
-            <h3>CPU / Processor</h3>
+            <h3 className="mt-2 font-bold">CPU / Processor</h3>
           </Link>
         </div>
         <div className="p-4 bg-slate-600 rounded-lg text-center text-white">
@@ -32,7 +34,7 @@ const FeaturedCategories = () => {
               alt=""
               className="mx-auto"
             />
-            <h3>Motherboard</h3>
+            <h3 className="mt-2 font-bold">Motherboard</h3>
           </Link>
         </div>
         <div className="p-4 bg-slate-600 rounded-lg text-center text-white">
@@ -43,7 +45,7 @@ const FeaturedCategories = () => {
               alt=""
               className="mx-auto"
             />
-            <h3>RAM</h3>
+            <h3 className="mt-2 font-bold">RAM</h3>
           </Link>
         </div>
         <div className="p-4 bg-slate-600 rounded-lg text-center text-white">
@@ -57,7 +59,7 @@ const FeaturedCategories = () => {
               alt=""
               className="mx-auto"
             />
-            <h3>Power Supply Unit</h3>
+            <h3 className="mt-2 font-bold">Power Supply Unit</h3>
           </Link>
         </div>
         <div className="p-4 bg-slate-600 rounded-lg text-center text-white">
@@ -71,7 +73,7 @@ const FeaturedCategories = () => {
               alt=""
               className="mx-auto"
             />
-            <h3>Storage Device</h3>
+            <h3 className="mt-2 font-bold">Storage Device</h3>
           </Link>
         </div>
         <div className="p-4 bg-slate-600 rounded-lg text-center text-white">
@@ -85,7 +87,7 @@ const FeaturedCategories = () => {
               alt=""
               className="mx-auto"
             />
-            <h3>Monitor</h3>
+            <h3 className="mt-2 font-bold">Monitor</h3>
           </Link>
         </div>
         <div className="p-4 bg-slate-600 rounded-lg text-center text-white">
@@ -99,7 +101,7 @@ const FeaturedCategories = () => {
               alt=""
               className="mx-auto"
             />
-            <h3>Others</h3>
+            <h3 className="mt-2 font-bold">Others</h3>
           </Link>
         </div>
       </div>

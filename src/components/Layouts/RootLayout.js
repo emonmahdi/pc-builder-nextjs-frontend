@@ -12,7 +12,7 @@ const RootLayout = ({ children }) => {
       </Head>
       <div className="w-[100%] overflow-hidden">
         <Navbar />
-        <div className="h-[auto] p-4">{children}</div>
+        <div className="h-[auto]">{children}</div>
         <Footer />
       </div>
     </div>

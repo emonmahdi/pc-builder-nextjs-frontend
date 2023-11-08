@@ -34,7 +34,7 @@ export const getStaticProps = async () => {
     "https://pc-builder-server-ochre.vercel.app/products"
   );
   const data = await res.json();
-  console.log("Monitor: ", data);
+  // console.log("Monitor: ", data);
 
   return {
     props: {

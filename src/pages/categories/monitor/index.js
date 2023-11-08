@@ -7,8 +7,8 @@ const MonitorPage = ({ allProducts }) => {
     allProducts && allProducts?.filter((pro) => pro?.category === "monitor");
   return (
     <div>
-      <div className="">
-        <h2 className="text-center text-3xl font-bold my-4">All Monitors</h2>
+      <div className="px-16">
+        <h2 className="text-center text-3xl font-bold my-4">All Monitors ss</h2>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {monitor &&
@@ -31,7 +31,7 @@ export const getStaticProps = async () => {
     "https://pc-builder-server-ochre.vercel.app/products"
   );
   const data = await res.json();
-  console.log("Monitor: ", data);
+  // console.log("Monitor: ", data);
 
   return {
     props: {
