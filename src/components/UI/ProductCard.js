@@ -3,6 +3,7 @@ import { addToPcBuilder } from "@/redux/features/cart/cartSlice";
 import { useAppDispatch } from "@/redux/hook";
 import { useSession } from "next-auth/react";
 import Link from "next/link";
+import MyButton from "./MyButton";
 
 const ProductCard = ({ product }) => {
   const { id, title, description, img, price, status, category, rating } =
@@ -20,16 +21,18 @@ const ProductCard = ({ product }) => {
       key={id}
       className="card w-[100%] md:w-2/2 lg:w-3/3 bg-base-100 shadow-xl mb-4 "
     >
-      <figure>
-        <img src={img} width="50%" height="auto" alt="Shoes" />
-      </figure>
+      <Link href={`/detail/${product?._id}`}>
+        <figure>
+          <img src={img} width="50%" height="auto" alt="Shoes" />
+        </figure>
+      </Link>
       <div className="card-body">
-        <p className="text-purple-400 font-bold">{status}</p>
+        <p className="text-info font-bold">{status}</p>
         <Link href={`/detail/${product?._id}`}>
           <h2 className="card-title">
-            <span className="hover:text-orange-600">{title}</span>
+            <span className="hover:text-info">{title}</span>
 
-            <div className="badge badge-secondary">{price}৳</div>
+            <div className="badge bg-[#444444] text-white">{price}৳</div>
           </h2>
         </Link>
         <p> {description.slice(0, 120)}.......</p>
@@ -38,7 +41,7 @@ const ProductCard = ({ product }) => {
             <p>
               {" "}
               <span className="font-bold capitalize">Category:</span>{" "}
-              <span className="font-bold px-2 text-orange-400 rounded-full capitalize">
+              <span className="font-bold px-2 text-info rounded-full capitalize">
                 {category}
               </span>
             </p>
@@ -54,10 +57,10 @@ const ProductCard = ({ product }) => {
               <Link href="/pc-build">
                 <button
                   onClick={() => handleAddToPC(product)}
-                  className="btn btn-primary"
+                  className="btn btn-info"
                 >
                   Add To Builder
-                </button>
+                </button> 
               </Link>
             ) : (
               ""

@@ -6,7 +6,7 @@ const OtherPage = ({ allProducts }) => {
   const other =
     allProducts && allProducts?.filter((pro) => pro?.category === "others");
   return (
-    <div>
+    <div className="px-16">
       <div className="">
         <h2 className="text-center text-3xl font-bold my-4">All Monitors</h2>
       </div>

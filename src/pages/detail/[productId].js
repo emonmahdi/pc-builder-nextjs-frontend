@@ -4,7 +4,7 @@ import SingleProductDetailPage from "@/components/UI/ProductDetailsPage";
 const ProductDetail = ({ product }) => {
   //   const products = product.data;
   return (
-    <div>
+    <div className="px-16">
       <SingleProductDetailPage product={product} />
     </div>
   );

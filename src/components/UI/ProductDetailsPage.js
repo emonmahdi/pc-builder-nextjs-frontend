@@ -82,7 +82,7 @@ const SingleProductDetailPage = ({ product }) => {
             <p className="py-2">
               <span className="font-bold">Reviews:</span> {reviews}
             </p>
-            <button className="btn btn-primary mt-4">Buy Now</button>
+            {/* <button className="btn btn-primary mt-4">Buy Now</button> */}
           </div>
         </div>
       </div>

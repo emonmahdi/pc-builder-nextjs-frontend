@@ -6,7 +6,7 @@ const RamPage = ({ allProducts }) => {
   const ram =
     allProducts && allProducts?.filter((pro) => pro?.category === "ram");
   return (
-    <div>
+    <div className="px-16">
       <div className="">
         <h2 className="text-center text-3xl font-bold my-4">All Ram</h2>
       </div>

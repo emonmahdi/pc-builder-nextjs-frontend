@@ -7,7 +7,7 @@ const StorageDevicePage = ({ allProducts }) => {
     allProducts &&
     allProducts?.filter((pro) => pro?.category === "storage-device");
   return (
-    <div>
+    <div className="px-16">
       <div className="">
         <h2 className="text-center text-3xl font-bold my-4">
           All Storage Device

@@ -6,7 +6,7 @@ const ProcessorPage = ({ allProducts }) => {
   const processor =
     allProducts && allProducts?.filter((pro) => pro?.category === "processor");
   return (
-    <div>
+    <div className="px-16">
       <div className="">
         <h2 className="text-center text-3xl font-bold my-4">All Processor</h2>
       </div>

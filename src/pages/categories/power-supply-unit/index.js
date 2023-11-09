@@ -7,7 +7,7 @@ const PowerSupplyUnitPage = ({ allProducts }) => {
     allProducts &&
     allProducts?.filter((pro) => pro?.category === "power-supply-unit");
   return (
-    <div>
+    <div className="px-16">
       <div className="">
         <h2 className="text-center text-3xl font-bold my-4">
           All Power Supply
