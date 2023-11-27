@@ -20,10 +20,10 @@ export default function HomePage({ products }) {
       <div>
         <Banner />
       </div>
-      <div>
+      <div className="mb-8">
         <AllProduct products={products} />
       </div>
-      <div className="py-20">
+      <div className=" ">
         <FeaturedCategories />
       </div>
     </>

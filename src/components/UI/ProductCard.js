@@ -20,10 +20,13 @@ const ProductCard = ({ product }) => {
     <div
       key={id}
       className="card sm:w-full md:w-2/2 lg:w-3/3 bg-base-100 shadow-xl mb-4"
+      style={{
+        borderRight: "5px solid #444444",
+      }}
     >
       <Link href={`/detail/${product?._id}`}>
         <figure>
-          <img src={img} width="50%" height="auto" alt="Shoes" />
+          <img src={img} width="40%" height="auto" alt="Shoes" />
         </figure>
       </Link>
       <div className="card-body">
@@ -35,7 +38,7 @@ const ProductCard = ({ product }) => {
             <div className="badge bg-[#444444] text-white">{price}৳</div>
           </h2>
         </Link>
-        <p> {description.slice(0, 120)}.......</p>
+        {/* <p> {description.slice(0, 120)}.......</p> */}
         <div>
           <div>
             <p>
