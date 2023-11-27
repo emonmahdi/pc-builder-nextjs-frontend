@@ -5,6 +5,11 @@ import { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "@/redux/hook";
 import { setUser } from "@/redux/features/user/userSlice";
 import MyButton from "../UI/MyButton";
+import { FaPowerOff } from "react-icons/fa6";
+import { FaDesktop } from "react-icons/fa";
+import { FaArrowRightToBracket } from "react-icons/fa6";
+import logo from "../../assets/logo.png";
+import Image from "next/image";
 
 const Navbar = () => {
   const dispatch = useAppDispatch();
@@ -82,6 +87,7 @@ const Navbar = () => {
           href="/"
           className="text-white font-bold no-underline normal-case text-2xl"
         >
+          {/* <Image src={logo} width="80px" height="40px" alt="logo" /> */}
           Mahdi PC Builder
         </Link>
       </div>
@@ -132,17 +138,71 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-end">
-        <Link href="/pc-build" className="btn btn-info mr-8">
-          MAKE PC
+        <Link
+          href="/pc-build"
+          style={{
+            background: "rgb(101,80,219)",
+            background:
+              "linear-gradient(0deg, rgba(101,80,219,1) 2%, rgba(131,47,149,1) 100%)",
+            marginRight: "6px",
+            color: "#fff",
+            padding: "12px 20px",
+            border: "none",
+            borderRadius: "6px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-evenly",
+            fontWeight: "bold",
+          }}
+        >
+          <span style={{ paddingRight: "6px", paddingTop: "2px" }}>
+            <FaDesktop />
+          </span>{" "}
+          <span>MAKE PC</span>
         </Link>
+
         {session?.user ? (
-          <button className="btn bg-[#E74645]" onClick={() => signOut()}>
-            Log Out
+          <button
+            style={{
+              color: "#fff",
+              background: "#B23B3B",
+              padding: "12px 20px",
+              border: "none",
+              borderRadius: "6px",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-evenly",
+            }}
+          >
+            <span style={{ paddingRight: "6px", paddingTop: "3px" }}>
+              {" "}
+              <FaPowerOff />
+            </span>{" "}
+            <span> Log Out</span>
           </button>
         ) : (
           // <MyButton >Login</MyButton>
           <Link href="/login" className="mr-8">
-            <MyButton>Login</MyButton>
+            <button
+              style={{
+                background: "rgb(36,147,213)",
+                background:
+                  "linear-gradient(93deg, rgba(36,147,213,1) 2%, rgba(23,206,158,1) 100%)",
+                color: "#fff",
+                padding: "12px 20px",
+                border: "none",
+                borderRadius: "6px",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "space-evenly",
+                fontWeight: "bold",
+              }}
+            >
+              <span style={{ paddingRight: "6px", paddingTop: "3px" }}>
+                <FaArrowRightToBracket />
+              </span>
+              <span> Login</span>
+            </button>
           </Link>
         )}
       </div>

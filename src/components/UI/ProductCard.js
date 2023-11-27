@@ -19,7 +19,7 @@ const ProductCard = ({ product }) => {
   return (
     <div
       key={id}
-      className="card w-[100%] md:w-2/2 lg:w-3/3 bg-base-100 shadow-xl mb-4 "
+      className="card sm:w-full md:w-2/2 lg:w-3/3 bg-base-100 shadow-xl mb-4"
     >
       <Link href={`/detail/${product?._id}`}>
         <figure>
@@ -60,7 +60,7 @@ const ProductCard = ({ product }) => {
                   className="btn btn-info"
                 >
                   Add To Builder
-                </button> 
+                </button>
               </Link>
             ) : (
               ""

@@ -1,7 +1,9 @@
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
+import Link from "next/link";
 import { useSession, signOut } from "next-auth/react";
+import { FaDesktop } from "react-icons/fa";
 
 const Banner = () => {
   const { data: session } = useSession();
@@ -24,7 +26,29 @@ const Banner = () => {
               et a id nisi.
             </p>
             {/* <MyButton>MAKE PC</MyButton> */}
-            <button className="btn btn-info">Make PC</button>
+            <Link
+              href="/pc-build"
+              style={{
+                background: "rgb(101,80,219)",
+                background:
+                  "linear-gradient(0deg, rgba(101,80,219,1) 2%, rgba(131,47,149,1) 100%)",
+                marginRight: "6px",
+                color: "#fff",
+                padding: "12px 20px",
+                border: "none",
+                borderRadius: "6px",
+                display: "flex",
+                alignItems: "center",
+                fontWeight: "bold",
+                width: "180px",
+                justifyContent: "center",
+              }}
+            >
+              <span style={{ paddingRight: "6px", paddingTop: "2px" }}>
+                <FaDesktop />
+              </span>{" "}
+              <span>MAKE PC</span>
+            </Link>
           </div>
         </div>
       </div>
