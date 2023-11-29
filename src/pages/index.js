@@ -47,17 +47,3 @@ export const getStaticProps = async () => {
   const randomProducts = getRandomProducts(data, 6);
   return { props: { products: randomProducts }, revalidate: 10 };
 };
-
-/* export const getStaticProps = async () => {
-  const res = await fetch("");
-  const data = await res.json();
-  console.log(data);
-  // const randomProducts = getRandomProducts(data, 6);
-  return {
-    props: {
-      allProducts: data.data,
-    },
-    revalidate: 5,
-  };
-};
- */

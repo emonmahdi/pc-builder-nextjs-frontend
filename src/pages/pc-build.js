@@ -4,8 +4,8 @@ import RootLayout from "@/components/Layouts/RootLayout";
 import { useAppSelector } from "@/redux/hook";
 import Link from "next/link";
 import React, { useEffect } from "react";
-import { useState } from "react";
 import { Toaster, toast } from "react-hot-toast";
+import { FaDesktop } from "react-icons/fa";
 
 const PcBuilder = ({ product }) => {
   const { products } = useAppSelector((state) => state.cart);
@@ -18,7 +18,7 @@ const PcBuilder = ({ product }) => {
 
   return (
     <div>
-      <div className="m-4 md:w-[70%] mx-auto box-border  p-2">
+      <div className="m-4 md:w-[70%] mx-auto box-border p-2">
         <Toaster />
         <div className="grid grid-cols-5">
           <div className="col-start-1 col-span-5 w-full h-auto bg-base-200">
@@ -44,13 +44,13 @@ const PcBuilder = ({ product }) => {
         </div>
         <div>
           {/* single category */}
-          <div className="flex justify-between items-center my-4 bg-gray-700 p-4 text-light rounded-2xl">
-            <div>
+          <div className="flex justify-between items-center my-4 bg-[#081621] p-4 text-light rounded-2xl">
+            <div className="w-[50%]">
               <li className="list-none capitalize text-xl text-white">
                 Processor
               </li>
             </div>
-            <div>
+            <div className="w-[50%]">
               {products.map((pro) =>
                 pro.category === "processor" ? (
                   <>
@@ -84,7 +84,7 @@ const PcBuilder = ({ product }) => {
             </div>
           </div>
           {/* single category */}
-          <div className="flex justify-between items-center my-4 bg-gray-700 p-4 text-light rounded-2xl">
+          <div className="flex justify-between items-center my-4 bg-[#081621] p-4 text-light rounded-2xl">
             <div>
               <li className="list-none capitalize text-xl text-white">
                 Motherboard
@@ -124,7 +124,7 @@ const PcBuilder = ({ product }) => {
             </div>
           </div>
           {/* single category */}
-          <div className="flex justify-between items-center my-4 bg-gray-700 p-4 text-light rounded-2xl">
+          <div className="flex justify-between items-center my-4 bg-[#081621] p-4 text-light rounded-2xl">
             <div>
               {" "}
               <li className="list-none capitalize text-xl text-white">Ram</li>
@@ -163,7 +163,7 @@ const PcBuilder = ({ product }) => {
             </div>
           </div>
           {/* single category */}
-          <div className="flex justify-between items-center my-4 bg-gray-700 p-4 text-light rounded-2xl">
+          <div className="flex justify-between items-center my-4 bg-[#081621] p-4 text-light rounded-2xl">
             <div>
               <li className="list-none capitalize text-xl text-white">
                 Power Supply Unit
@@ -203,7 +203,7 @@ const PcBuilder = ({ product }) => {
             </div>
           </div>
           {/* single category */}
-          <div className="flex justify-between items-center my-4 bg-gray-700 p-4 text-light rounded-2xl">
+          <div className="flex justify-between items-center my-4 bg-[#081621] p-4 text-light rounded-2xl">
             <div>
               <li className="list-none capitalize text-xl text-white">
                 Storage Device
@@ -243,7 +243,7 @@ const PcBuilder = ({ product }) => {
             </div>
           </div>
           {/* single category */}
-          <div className="flex justify-between items-center my-4 bg-gray-700 p-4 text-light rounded-2xl">
+          <div className="flex justify-between items-center my-4 bg-[#081621] p-4 text-light rounded-2xl">
             <div>
               {" "}
               <li className="list-none capitalize text-xl text-white">
@@ -270,16 +270,42 @@ const PcBuilder = ({ product }) => {
               )}
             </div>
             <div>
-              <Link href="/categories/monitor">
-                <button
+              <Link
+                href="/categories/monitor"
+                className={`btn ${
+                  products.find((pro) => pro.category === "monitor")
+                    ? "hidden"
+                    : ""
+                }`}
+                style={{
+                  background: "rgb(101,80,219)",
+                  background:
+                    "linear-gradient(0deg, rgba(101,80,219,1) 2%, rgba(131,47,149,1) 100%)",
+                  marginRight: "6px",
+                  color: "#fff",
+                  padding: "12px 20px",
+                  border: "none",
+                  borderRadius: "6px",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "space-evenly",
+                  fontWeight: "bold",
+                }}
+              >
+                <span style={{ paddingRight: "6px", paddingTop: "2px" }}>
+                  <FaDesktop />
+                </span>{" "}
+                <span>Choose</span>
+                {/* <button
                   className={`btn btn-primary ${
                     products.find((pro) => pro.category === "monitor")
                       ? "btn-disabled"
                       : ""
                   }`}
+                  style={{}}
                 >
                   Choose
-                </button>
+                </button> */}
               </Link>
             </div>
           </div>
