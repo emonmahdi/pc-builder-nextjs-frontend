@@ -16,14 +16,14 @@ const Navbar = () => {
   const { user } = useAppSelector((state) => state.user);
   const { data: session } = useSession();
   // console.log(session?.user?.email)
-  /* useEffect(() => {
+  useEffect(() => {
     dispatch(setUser(session?.user?.email));
   }, [session?.user, dispatch]);
 
   const handelLogOut = () => {
     signOut();
     dispatch(setUser(null));
-  }; */
+  };
 
   return (
     <div className="navbar sticky top-0 bg-[#081621] text-white z-20 lg:px-16">
@@ -163,6 +163,7 @@ const Navbar = () => {
 
         {session?.user ? (
           <button
+            onClick={handelLogOut}
             style={{
               color: "#fff",
               background: "#B23B3B",

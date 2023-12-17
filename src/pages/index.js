@@ -1,6 +1,7 @@
 import RootLayout from "@/components/Layouts/RootLayout";
 import AllProduct from "@/components/UI/AllProducts";
 import Banner from "@/components/UI/Banner";
+import Brands from "@/components/UI/Brands/Brands";
 import FeaturedCategories from "@/components/UI/FeaturedCategory/FeaturedCategories";
 import { getProductsCategorySuccess } from "@/redux/features/productCategory/productCategorySlice";
 import { useAppDispatch } from "@/redux/hook";
@@ -19,6 +20,9 @@ export default function HomePage({ products }) {
     <>
       <div>
         <Banner />
+      </div>
+      <div>
+        <Brands />
       </div>
       <div className="mb-8">
         <AllProduct products={products} />

@@ -6,6 +6,11 @@ import Link from "next/link";
 import React, { useEffect } from "react";
 import { Toaster, toast } from "react-hot-toast";
 import { FaDesktop } from "react-icons/fa";
+import { BsCpuFill } from "react-icons/bs";
+import { BsFillMotherboardFill } from "react-icons/bs";
+import { FaTram } from "react-icons/fa";
+import { MdPower } from "react-icons/md";
+import { BsMemory } from "react-icons/bs";
 
 const PcBuilder = ({ product }) => {
   const { products } = useAppSelector((state) => state.cart);
@@ -13,7 +18,7 @@ const PcBuilder = ({ product }) => {
   const x = products.map((product) => "");
 
   const notify = () => {
-    toast.success("Successfully Build! Request ");
+    toast.success("Successfully Build! Request");
   };
 
   return (
@@ -70,16 +75,32 @@ const PcBuilder = ({ product }) => {
               )}
             </div>
             <div>
-              <Link href="/categories/processor">
-                <button
-                  className={`btn btn-primary ${
-                    products.find((pro) => pro.category === "processor")
-                      ? "btn-disabled"
-                      : ""
-                  }`}
-                >
-                  Choose
-                </button>
+              <Link
+                href="/categories/processor"
+                className={`btn ${
+                  products.find((pro) => pro.category === "processor")
+                    ? "btn-disabled"
+                    : ""
+                }`}
+                style={{
+                  background: "rgb(101,80,219)",
+                  background:
+                    "linear-gradient(0deg, rgba(101,80,219,1) 2%, rgba(131,47,149,1) 100%)",
+                  marginRight: "6px",
+                  color: "#fff",
+                  padding: "12px 20px",
+                  border: "none",
+                  borderRadius: "6px",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "space-evenly",
+                  fontWeight: "bold",
+                }}
+              >
+                <span style={{ paddingRight: "6px", paddingTop: "2px" }}>
+                  <BsCpuFill />
+                </span>{" "}
+                <span>Choose</span>
               </Link>
             </div>
           </div>
@@ -110,16 +131,32 @@ const PcBuilder = ({ product }) => {
               )}
             </div>
             <div>
-              <Link href="/categories/motherboard">
-                <button
-                  className={`btn btn-primary ${
-                    products.find((pro) => pro.category === "motherboard")
-                      ? "btn-disabled"
-                      : ""
-                  }`}
-                >
-                  Choose
-                </button>
+              <Link
+                href="/categories/motherboard"
+                className={`btn ${
+                  products.find((pro) => pro.category === "motherboard")
+                    ? "btn-disabled"
+                    : ""
+                }`}
+                style={{
+                  background: "rgb(101,80,219)",
+                  background:
+                    "linear-gradient(0deg, rgba(101,80,219,1) 2%, rgba(131,47,149,1) 100%)",
+                  marginRight: "6px",
+                  color: "#fff",
+                  padding: "12px 20px",
+                  border: "none",
+                  borderRadius: "6px",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "space-evenly",
+                  fontWeight: "bold",
+                }}
+              >
+                <span style={{ paddingRight: "6px", paddingTop: "2px" }}>
+                  <BsFillMotherboardFill />
+                </span>{" "}
+                <span>Choose</span>
               </Link>
             </div>
           </div>
@@ -149,16 +186,32 @@ const PcBuilder = ({ product }) => {
               )}
             </div>
             <div>
-              <Link href="/categories/ram">
-                <button
-                  className={`btn btn-primary ${
-                    products.find((pro) => pro.category === "ram")
-                      ? "btn-disabled"
-                      : ""
-                  }`}
-                >
-                  Choose
-                </button>
+              <Link
+                href="/categories/ram"
+                className={`btn ${
+                  products.find((pro) => pro.category === "ram")
+                    ? "btn-disabled"
+                    : ""
+                }`}
+                style={{
+                  background: "rgb(101,80,219)",
+                  background:
+                    "linear-gradient(0deg, rgba(101,80,219,1) 2%, rgba(131,47,149,1) 100%)",
+                  marginRight: "6px",
+                  color: "#fff",
+                  padding: "12px 20px",
+                  border: "none",
+                  borderRadius: "6px",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "space-evenly",
+                  fontWeight: "bold",
+                }}
+              >
+                <span style={{ paddingRight: "6px", paddingTop: "2px" }}>
+                  <FaTram />
+                </span>{" "}
+                <span>Choose</span>
               </Link>
             </div>
           </div>
@@ -189,16 +242,32 @@ const PcBuilder = ({ product }) => {
               )}
             </div>
             <div>
-              <Link href="/categories/power-supply-unit">
-                <button
-                  className={`btn btn-primary ${
-                    products.find((pro) => pro.category === "power-supply-unit")
-                      ? "btn-disabled"
-                      : ""
-                  }`}
-                >
-                  Choose
-                </button>
+              <Link
+                href="/categories/power-supply-unit"
+                className={`btn ${
+                  products.find((pro) => pro.category === "power-supply-unit")
+                    ? "btn-disabled"
+                    : ""
+                }`}
+                style={{
+                  background: "rgb(101,80,219)",
+                  background:
+                    "linear-gradient(0deg, rgba(101,80,219,1) 2%, rgba(131,47,149,1) 100%)",
+                  marginRight: "6px",
+                  color: "#fff",
+                  padding: "12px 20px",
+                  border: "none",
+                  borderRadius: "6px",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "space-evenly",
+                  fontWeight: "bold",
+                }}
+              >
+                <span style={{ paddingRight: "6px", paddingTop: "2px" }}>
+                  <MdPower />
+                </span>{" "}
+                <span>Choose</span>
               </Link>
             </div>
           </div>
@@ -229,16 +298,32 @@ const PcBuilder = ({ product }) => {
               )}
             </div>
             <div>
-              <Link href="/categories/storage-device">
-                <button
-                  className={`btn btn-primary ${
-                    products.find((pro) => pro.category === "storage-device")
-                      ? "btn-disabled"
-                      : ""
-                  }`}
-                >
-                  Choose
-                </button>
+              <Link
+                href="/categories/storage-device"
+                className={`btn ${
+                  products.find((pro) => pro.category === "storage-device")
+                    ? "btn-disabled"
+                    : ""
+                }`}
+                style={{
+                  background: "rgb(101,80,219)",
+                  background:
+                    "linear-gradient(0deg, rgba(101,80,219,1) 2%, rgba(131,47,149,1) 100%)",
+                  marginRight: "6px",
+                  color: "#fff",
+                  padding: "12px 20px",
+                  border: "none",
+                  borderRadius: "6px",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "space-evenly",
+                  fontWeight: "bold",
+                }}
+              >
+                <span style={{ paddingRight: "6px", paddingTop: "2px" }}>
+                  <BsMemory />
+                </span>{" "}
+                <span>Choose</span>
               </Link>
             </div>
           </div>
@@ -274,7 +359,7 @@ const PcBuilder = ({ product }) => {
                 href="/categories/monitor"
                 className={`btn ${
                   products.find((pro) => pro.category === "monitor")
-                    ? "hidden"
+                    ? "btn-disabled"
                     : ""
                 }`}
                 style={{
@@ -296,16 +381,6 @@ const PcBuilder = ({ product }) => {
                   <FaDesktop />
                 </span>{" "}
                 <span>Choose</span>
-                {/* <button
-                  className={`btn btn-primary ${
-                    products.find((pro) => pro.category === "monitor")
-                      ? "btn-disabled"
-                      : ""
-                  }`}
-                  style={{}}
-                >
-                  Choose
-                </button> */}
               </Link>
             </div>
           </div>
