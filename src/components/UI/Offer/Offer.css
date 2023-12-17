@@ -1,0 +1,8 @@
+.offer-section {
+  background: url("./../../../assets/setup.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  height: 300px;
+}

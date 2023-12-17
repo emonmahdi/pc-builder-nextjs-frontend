@@ -4,6 +4,7 @@ import AllProduct from "@/components/UI/AllProducts";
 import Banner from "@/components/UI/Banner";
 import Brands from "@/components/UI/Brands/Brands";
 import FeaturedCategories from "@/components/UI/FeaturedCategory/FeaturedCategories";
+import Offer from "@/components/UI/Offer/Offer";
 import { getProductsCategorySuccess } from "@/redux/features/productCategory/productCategorySlice";
 import { useAppDispatch } from "@/redux/hook";
 import { useEffect } from "react";
@@ -30,6 +31,7 @@ export default function HomePage({ products }) {
       </div>
       <div>
         <Brands />
+        <Offer />
       </div>
       <div className=" ">
         <FeaturedCategories />
@@ -52,6 +54,6 @@ export const getStaticProps = async () => {
     "https://pc-builder-server-ochre.vercel.app/products"
   );
   const data = await res.json();
-  const randomProducts = getRandomProducts(data, 6);
+  const randomProducts = getRandomProducts(data, 8);
   return { props: { products: randomProducts }, revalidate: 10 };
 };

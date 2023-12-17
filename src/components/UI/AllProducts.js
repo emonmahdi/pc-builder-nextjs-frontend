@@ -12,7 +12,7 @@ const AllProduct = ({ products }) => {
           Featured <span className="text-[#3AC5FA]">Products</span>
         </h2>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 px-16">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 px-16">
         {products &&
           products?.map((product) => (
             <ProductCard product={product} key={product?.id}></ProductCard>

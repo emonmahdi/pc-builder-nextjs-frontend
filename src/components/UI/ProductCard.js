@@ -19,28 +19,31 @@ const ProductCard = ({ product }) => {
   return (
     <div
       key={id}
-      className="card sm:w-full md:w-2/2 lg:w-3/3 bg-base-100 shadow-xl mb-4"
+      className="sm:w-full md:w-2/2 lg:w-3/3 bg-base-100 shadow-xl mb-4 p-4"
       style={{
-        borderRight: "5px solid #444444",
+        borderLeft: "4px solid #444444",
       }}
     >
       <Link href={`/detail/${product?._id}`}>
-        <figure>
-          <img src={img} width="40%" height="auto" alt="Shoes" />
-        </figure>
+        <img
+          src={img}
+          className="mx-auto"
+          width="60%"
+          height="auto"
+          alt="Shoes"
+        />
       </Link>
-      <div className="card-body">
-        <p className="text-info font-bold">{status}</p>
+      <div className="border-t-2 border-solid border-gray-400 ">
+        <p className="text-info font-bold py-2">{status}</p>
         <Link href={`/detail/${product?._id}`}>
-          <h2 className="card-title">
+          <h2 className="">
             <span className="hover:text-info">{title}</span>
-
             <div className="badge bg-[#444444] text-white">{price}৳</div>
           </h2>
         </Link>
         {/* <p> {description.slice(0, 120)}.......</p> */}
         <div>
-          <div>
+          <div className="mt-4">
             <p>
               {" "}
               <span className="font-bold capitalize">Category:</span>{" "}
