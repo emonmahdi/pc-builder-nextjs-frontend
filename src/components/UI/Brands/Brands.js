@@ -2,7 +2,7 @@ import React from "react";
 
 const Brands = () => {
   return (
-    <div className="px-16 py-12 text-center">
+    <div className="px-16 py-8 text-center">
       <h2 className="text-center text-3xl font-bold my-8">
         Top <span className="text-[#3AC5FA]">Brands</span>
       </h2>

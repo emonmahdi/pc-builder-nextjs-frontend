@@ -1,4 +1,5 @@
 import RootLayout from "@/components/Layouts/RootLayout";
+import AboutSupport from "@/components/UI/AboutSupport/AboutSupport";
 import AllProduct from "@/components/UI/AllProducts";
 import Banner from "@/components/UI/Banner";
 import Brands from "@/components/UI/Brands/Brands";
@@ -22,10 +23,13 @@ export default function HomePage({ products }) {
         <Banner />
       </div>
       <div>
-        <Brands />
+        <AboutSupport />
       </div>
       <div className="mb-8">
         <AllProduct products={products} />
+      </div>
+      <div>
+        <Brands />
       </div>
       <div className=" ">
         <FeaturedCategories />
