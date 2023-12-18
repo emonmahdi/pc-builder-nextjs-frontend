@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 const Footer = () => {
@@ -48,7 +49,15 @@ const Footer = () => {
           </div>
         </div>
         <div>
-          <p>Copyright © 2023 - All right reserved by Pc Builder App</p>
+          <p>
+            Copyright © 2023 - All right reserved by Pc Builder App created by{" "}
+            <Link
+              href="https://devemonmahdi.netlify.app/"
+              className="text-[#2497D2]"
+            >
+              Md Emon Mahdi
+            </Link>{" "}
+          </p>
         </div>
       </footer>
     </div>

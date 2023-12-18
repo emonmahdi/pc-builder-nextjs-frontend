@@ -50,22 +50,22 @@ const Banner = () => {
             <img
               src="https://i.ibb.co/w6nhGH7/s700-228x228.jpg"
               alt="Slider Image"
-              className="max-w-sm rounded-lg w-[40%] lg:w-[80%] mx-auto lg:mx-0 lg:ml-8 h-auto md:h-full object-cover"
+              className="max-w-sm rounded-lg w-[40%] lg:w-[100%] mx-auto lg:mx-0 lg:ml-8 h-auto md:h-full object-cover"
             />
             <img
               src="https://i.ibb.co/G5vfPs2/GIGABYTE-GA-J1800-M-D3-P-1-228x228.jpg"
               alt="Slider Image"
-              className="max-w-sm rounded-lg w-[40%] lg:w-[80%] mx-auto lg:mx-0 lg:ml-8 h-auto md:h-full object-cover"
+              className="max-w-sm rounded-lg w-[40%] lg:w-[100%] mx-auto lg:mx-0 lg:ml-8 h-auto md:h-full object-cover"
             />
             <img
               src="https://i.ibb.co/LvGRdt6/kb080-01-228x228.jpg"
               alt="Slider Image"
-              className="max-w-sm rounded-lg w-[40%] lg:w-[80%] mx-auto lg:mx-0 lg:ml-8 h-auto md:h-full object-cover"
+              className="max-w-sm rounded-lg w-[40%] lg:w-[100%] mx-auto lg:mx-0 lg:ml-8 h-auto md:h-full object-cover"
             />
             <img
               src="https://i.ibb.co/mRhhxdm/mg-wc05nc3-02-500x500.webp"
               alt="Slider Image"
-              className="max-w-sm rounded-lg w-[40%] lg:w-[80%] mx-auto lg:mx-0 lg:ml-8 h-auto md:h-full object-cover"
+              className="max-w-sm rounded-lg w-[40%] lg:w-[100%] mx-auto lg:mx-0 lg:ml-8 h-auto md:h-full object-cover"
             />
           </div>
         </div>

@@ -50,16 +50,23 @@ const PcBuilder = ({ product }) => {
         <div>
           {/* single category */}
           <div className="flex justify-between items-center my-4 bg-[#081621] p-4 text-light rounded-2xl">
-            <div className="w-[50%]">
+            <div className="">
               <li className="list-none capitalize text-xl text-white">
                 Processor
               </li>
+              {/* {!products && (
+                <>
+                  <li className="list-none capitalize text-xl text-white">
+                    Processor
+                  </li>
+                </>
+              )} */}
             </div>
-            <div className="w-[50%]">
-              {products.map((pro) =>
+            <div className="">
+              {products.map((pro, index) =>
                 pro.category === "processor" ? (
                   <>
-                    <div className="flex items-center">
+                    <div key={index} className="flex items-center">
                       <div>
                         <img src={pro?.img} className="w-[50px]" alt="" />
                       </div>

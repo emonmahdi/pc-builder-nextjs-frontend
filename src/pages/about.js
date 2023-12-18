@@ -1,9 +1,86 @@
 import RootLayout from "@/components/Layouts/RootLayout";
+import { useAppSelector } from "@/redux/hook";
+import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const AboutPage = () => {
+  const { products } = useAppSelector((state) => state.cart);
+
+  const x = products.map((product) => "");
+
+  const notify = () => {
+    toast.success("Successfully Build! Request");
+  };
+
   return (
     <div>
+      <>
+        <div className="flex justify-between items-center my-4 bg-[#081621] p-4 text-light rounded-2xl w-[50%] mx-auto">
+          <div className="">
+            <li className="list-none capitalize text-xl text-white">
+              Processor
+            </li>
+            {/* {!products && (
+                <>
+                  <li className="list-none capitalize text-xl text-white">
+                    Processor
+                  </li>
+                </>
+              )} */}
+          </div>
+          <div className="">
+            {products.map((pro, index) =>
+              pro.category === "processor" ? (
+                <>
+                  <div key={index} className="flex items-center">
+                    <div>
+                      <Image
+                        src={pro?.img}
+                        className="w-[50px]"
+                        alt="product"
+                      />
+                    </div>
+                    <div className="text-white ml-4">
+                      <p>{pro.title}</p>
+                      <p className="text-xl font-semibold ">{pro.price}৳</p>
+                    </div>
+                  </div>
+                </>
+              ) : (
+                ""
+              )
+            )}
+          </div>
+          <div>
+            <Link
+              href="/categories/processor"
+              className={`btn ${
+                products.find((pro) => pro.category === "processor")
+                  ? "btn-disabled"
+                  : ""
+              }`}
+              style={{
+                background: "rgb(101,80,219)",
+                background:
+                  "linear-gradient(0deg, rgba(101,80,219,1) 2%, rgba(131,47,149,1) 100%)",
+                marginRight: "6px",
+                color: "#fff",
+                padding: "12px 20px",
+                border: "none",
+                borderRadius: "6px",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "space-evenly",
+                fontWeight: "bold",
+              }}
+            >
+              <span>Choose</span>
+            </Link>
+          </div>
+        </div>
+      </>
+
       <div className="container mx-auto my-8 p-8 bg-white rounded-lg shadow-md">
         <h1 className="text-4xl font-bold text-center text-blue-500 mb-6">
           About PC Builder App
